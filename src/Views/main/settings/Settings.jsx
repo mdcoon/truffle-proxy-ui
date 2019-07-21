@@ -13,24 +13,34 @@ import * as align from "Constants/alignments";
 
 export default class Settings extends React.Component {
   render() {
-    const {
-      proxyAddress
-    } = this.props;
+    const { proxyAddress } = this.props;
 
     return (
-      <div className={classNames(["container"], ["text-center"], ["mt-5"])}>
+      <div className={classNames(["container"], ["text-center"])}>
         <Form>
           <FormGroup row>
             <Label for="contractAddress" sm={2}>
               Please enter your contract address:
             </Label>
             <Col sm={5}>
-              <Input type="textarea" name="text" id="contractAddress" value={proxyAddress} onChange={e=>this.props.updateAddress(e.target.value)}/>
+              <Input
+                type="textarea"
+                name="text"
+                id="contractAddress"
+                value={proxyAddress}
+                onChange={e => this.props.updateAddress(e.target.value)}
+              />
             </Col>
           </FormGroup>
-          <FormGroup check row>
+          <FormGroup
+            className={classNames(["container"], ["text-left"])}
+            check
+            row
+          >
             <Col sm={{ size: 10, offset: 2 }}>
-              <Button>Submit</Button>
+              <Button size="lg" color="success">
+                Submit
+              </Button>
             </Col>
           </FormGroup>
         </Form>
