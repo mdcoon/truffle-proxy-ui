@@ -24,6 +24,9 @@ import classNames from "classnames";
 import * as align from "Constants/alignments";
 import Navi from "./Nav.jsx";
 import VersionsTable from "./VersionsTable.jsx";
+import HistoricalData from "./Historical.jsx";
+import Interactions from "./Interactions.jsx";
+import Settings from "./Settings.jsx";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -89,50 +92,16 @@ export default class Main extends React.Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            {/* <Row>
-              <Col sm="12">
-                <h4>Tab 1 Contents</h4>
-              </Col>
-            </Row> */}
             <VersionsTable />
           </TabPane>
           <TabPane tabId="2">
-            <Row>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-              <Col sm="6">
-                <Card body>
-                  <CardTitle>Special Title Treatment</CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button>Go somewhere</Button>
-                </Card>
-              </Col>
-            </Row>
+            <HistoricalData />
           </TabPane>
           <TabPane tabId="3">
-            <Row>
-              <Col sm="12">
-                <h4>Here's storage and transaction data</h4>
-              </Col>
-            </Row>
+            <Interactions />
           </TabPane>
           <TabPane tabId="4">
-            <Row>
-              <Col sm="12">
-                <h4>Here's settings</h4>
-              </Col>
-            </Row>
+            <Settings />
           </TabPane>
         </TabContent>
       </div>
