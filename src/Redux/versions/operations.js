@@ -1,9 +1,9 @@
 import {Creators} from './actions'
-import {Types as chainTypes} from 'Redux/chain/actions'
+import {Types as eventTypes} from 'Redux/logEvents/actions'
 import {registerDeps} from 'Redux/DepMiddleware'
 
 const init = () => async (dispatch) => {
-    registerDeps([chainTypes.ADD_EVENTS], ()=>{
+    registerDeps([eventTypes.ADD_EVENTS], ()=>{
         console.log("Detected added events");
         dispatch(convertEvents(true))
     });
@@ -15,14 +15,16 @@ const init = () => async (dispatch) => {
 //this is entirely inefficient
 const convertEvents = (isUpdate) => (dispatch, getState) => {
     console.log("Converting events to versions");
-    let ch = getState().chain;
+    let evts = getState().logEvents;
+
     let versions = [];
     //need block #, new address, txn hash 
-    ch.events.forEach(e=>{
+    evts.data.forEach(e=>{
         let v = {
             blockNumber: e.blockNumber,
             address: e.returnValues.newAddress,
-            txnHash: e.transactionHash
+            txnHash: e.transactionHash,
+            timestamp: e.timestamp
         }
         versions.push(v)
     })

@@ -4,7 +4,7 @@ const {Types, Creators} = createActions({
     initStart: null,
     initSuccess: ['props'],
     chainChanged: ['props'],
-    addEvents: ['events'],
+    addTxns: ['txns'],
     failure: ['error']
 }, {prefix: "chain."});
 export {

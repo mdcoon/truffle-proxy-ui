@@ -23,8 +23,8 @@ import {
 import classNames from "classnames";
 import * as align from "Constants/alignments";
 import Navi from "./Nav.jsx";
-import VersionsTable from "./VersionsTable.jsx";
-import HistoricalData from "./Historical.jsx";
+import VersionsTable from "./versions";
+import HistoricalData from "./txns";
 import Interactions from "./Interactions.jsx";
 import Settings from "./Settings.jsx";
 

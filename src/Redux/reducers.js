@@ -4,6 +4,7 @@ import {reducer as toastrReducer} from 'react-redux-toastr'
 import {default as settings} from './settings/reducers'
 import {default as chain} from './chain/reducers'
 import {default as versions} from './versions/reducers'
+import {default as logEvents} from './logEvents/reducers'
 
 /**
  * Collection of all dashboard state tree reducers
@@ -13,5 +14,6 @@ export default combineReducers({
   init,
   settings,
   chain,
-  versions
+  versions,
+  logEvents
 });

@@ -1,6 +1,7 @@
 import {Creators} from './actions';
 import {default as chainOps} from 'Redux/chain/operations';
 import {default as settingOps} from 'Redux/settings/operations';
+import {default as eventOps} from 'Redux/logEvents/operations'
 import {default as versionOps} from 'Redux/versions/operations'
 
 import {registerDeps} from 'Redux/DepMiddleware';
@@ -13,6 +14,11 @@ const initChain = props => {
 const initSettings = props => {
   return props.dispatch(settingOps.init())
       .then(()=>props)
+}
+
+const initEvents = props => {
+  return props.dispatch(eventOps.init())
+  .then(()=>props)
 }
 
 const initVersions = props => {
@@ -42,6 +48,7 @@ const _doStart = () => (dispatch,getState) => {
   }
   return initSettings(props)
         .then(initChain)
+        .then(initEvents)
         .then(initVersions)
         .then(startSubscriptions)
         .then(()=>{

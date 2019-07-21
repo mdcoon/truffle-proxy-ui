@@ -10,7 +10,7 @@ const INIT = {
     contract: null,
     network: 0,
     subscriptions: null,
-    events: []
+    txns: []
 }
 
 const start = (state=INIT) => {
@@ -58,14 +58,14 @@ const fail = (state=INIT, action) => {
     }
 }
 
-const addEvents = (state=INIT, action) => {
-    let evts = [
-        ...state.events,
-        ...action.events
+const addTxns = (state=INIT, action) => {
+    let txns = [
+        ...state.txns,
+        ...action.txns
     ]
     return {
         ...state,
-        events: evts
+        txns: txns
     }
 }
 
@@ -74,7 +74,7 @@ const HANDLERS = {
     [Types.INIT_SUCCESS]: done, 
     [Types.FAILURE]: fail,
     [Types.CHAIN_CHANGED]: changed,
-    [Types.ADD_EVENTS]: addEvents
+    [Types.ADD_TXNS]: addTxns
 }
 
 export default createReducer(INIT, HANDLERS);

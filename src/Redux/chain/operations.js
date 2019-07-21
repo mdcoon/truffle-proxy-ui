@@ -34,6 +34,7 @@ const loadWeb3 = () => async (dispatch) => {
         });
 
         await dispatch(initChain(ethProvider, Creators.initSuccess))
+        await dispatch(initTransactions())
     } else {
         dispatch(Creators.failure(new Error("Missing ethProvider in environment")))
     }
@@ -57,6 +58,39 @@ const initChain = (ethProvider, dFn) => async (dispatch, getState) => {
         contract: con,
         network
     }));
+}
+   
+
+const initTransactions = () => async (dispatch, getState) => {
+    let ch = getState().chain;
+    let web3 = ch.web3;
+    if(web3) {
+        let start = await web3.eth.getBlockNumber();
+        let end = start;
+        if(start.toString) {
+            start = (start.toString() - 0);
+        }
+        start -= 10;
+        if(start < 0) {
+            start = 0;
+        }
+        let allTxns = [];
+        for(let i=start;i<=end;++i) {
+            let b = await web3.eth.getBlock(i, true);
+            for(let j=0;j<b.transactions.length;++j) {
+                let t = b.transactions[j];
+                
+                let r = await web3.eth.getTransactionReceipt(t.hash);
+
+                allTxns.push({
+                    ...t,
+                    receipt: r,
+                    timestamp: b.timestamp
+                })
+            }
+        }
+        dispatch(Creators.addTxns(allTxns))
+    }
 }
 
 //resetContract called when user changes settings
@@ -107,7 +141,7 @@ const startSubscriptions = () => async (dispatch,getState) => {
         
         if(block) {
             console.log("incoming block", block.number);
-          await dispatch(pullEvents(block))
+          await dispatch(pullTxns(block))
         }
       };
 
@@ -115,8 +149,26 @@ const startSubscriptions = () => async (dispatch,getState) => {
       dispatch(Creators.chainChanged({
           subscription: sub
       }))
+    }
+}
 
-      dispatch(pullEvents());
+
+const pullTxns = block => async (dispatch, getState) => {
+    let chain = getState().chain;
+    let web3 = chain.web3;
+    let txns = block.transactions;
+    let allTxns = [];
+    if(web3) {
+        for(let i=0;i<txns.length;++i) {
+            let t = txns[i];
+            let r = await web3.eth.getTransactionReceipt(t.hash);
+            allTxns.push({
+                ...t,
+                timestamp: block.timestamp,
+                receipt: r
+            })
+        }
+        dispatch(Creators.addTxns(allTxns))
     }
 }
 
@@ -128,19 +180,21 @@ const pullEvents = block => async (dispatch, getState) => {
     if(web3 && con) {
 
         let config = {
+            //terribly inefficient to keep getting from zero but fine for demo
             fromBlock: 0 // block?block.number:0
         };
     
         try {
         let evtName = "allEvents";
         let start = Date.now();
-        console.log("Getting all events from block", config.fromBlock);
         let events = await con.getPastEvents(evtName, config);
-        if(block) {
-            console.log("Full block", await web3.eth.getBlock(block.number, true))
-        }
-        console.log("Events", events);
+        
         if(events && events.length > 0) {
+            for(let i=0;i<events.length;++i) {
+                let evt = events[i];
+                let b = await web3.eth.getBlock(evt.blockNumber);
+                evt.timestamp = b.timestamp;
+            }
             dispatch(Creators.addEvents(events));
         }
         } catch (e) {

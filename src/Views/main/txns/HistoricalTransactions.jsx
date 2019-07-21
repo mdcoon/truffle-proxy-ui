@@ -5,27 +5,32 @@ import * as align from "Constants/alignments";
 
 export default class HistoricalStorage extends React.Component {
   render() {
+    const {
+      txns
+    } = this.props;
+
     return (
       <Table hover>
         <thead>
           <tr>
             <th>Block #</th>
+            <th>Function</th>
+            <th>To Addr</th>
             <th>Transaction Hash</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>0x…………</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>0x…………</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>0x…………</td>
-          </tr>
+          {
+            txns.map((t, i)=>(
+              <tr key={i}>
+                <th scope="row">{t.blockNumber.toLocaleString()}</th>
+                <td>f...</td>
+                <td>{t.receipt.to?t.receipt.to:'none'}</td>
+                <td>{t.hash.substring(0, 20) + '...'}</td>
+              </tr>
+            ))
+          }
+          
         </tbody>
       </Table>
     );
