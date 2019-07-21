@@ -32,17 +32,17 @@ truffle run upgrade
 
 ## Images
 
-![Versions](https://github.com/mdcoon/truffle-proxy-ui/img/Versions.png "Versions")
+![Versions](https://github.com/mdcoon/truffle-proxy-ui/blob/master/img/Versions.png "Versions")
 
-![Versions](https://github.com/mdcoon/truffle-proxy-ui/img/VersionsModal.png "Versions Modal")
+![Versions](https://github.com/mdcoon/truffle-proxy-ui/blob/master/img/VersionsModal.png "Versions Modal")
 
 See Versions of Proxies - and get an **explanation**
 
-![Historical Data](https://github.com/mdcoon/truffle-proxy-ui/img/HistoricalData.png "Historical Data")
+![Historical Data](https://github.com/mdcoon/truffle-proxy-ui/blob/master/img/HistoricalData.png "Historical Data")
 
 Compare the output storage size of your proxy contracts - and check out **how that reference storage location stays the same**
 
-![Interactions](https://github.com/mdcoon/truffle-proxy-ui/img/Interactions.png "Interactions")
+![Interactions](https://github.com/mdcoon/truffle-proxy-ui/img/blob/master/Interactions.png "Interactions")
 
 Interact with everyone's favorite - **Metamask**
 
