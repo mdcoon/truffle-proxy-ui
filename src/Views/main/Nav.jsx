@@ -22,6 +22,7 @@ import {
 } from "reactstrap";
 import classNames from "classnames";
 import * as align from "Constants/alignments";
+import mainStyles from "./main.module.scss";
 
 export default class Navi extends React.Component {
   constructor(props) {
@@ -42,7 +43,10 @@ export default class Navi extends React.Component {
       <div>
         <Navbar color="dark" light expand="md">
           <NavbarBrand className={classNames(["text-white"])} href="/">
-            Truffle-Proxy
+            <span className={classNames([mainStyles.title])}>
+              Truffle-
+              <span className={classNames([mainStyles.orange])}>Proxy</span>
+            </span>
           </NavbarBrand>
           {/* <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
