@@ -6,7 +6,7 @@ import {default as Settings} from 'Constants/settings'
 import Web3 from 'web3';
 import abi from './abi'
 
-const init = () => async (dispatch, getState) => { 
+const init = () => async (dispatch, getState) => {
     dispatch(Creators.initStart())
     registerDeps([settingTypes.UPDATE], ()=>{
         dispatch(resetContract)
@@ -49,7 +49,7 @@ const initChain = (ethProvider, dFn) => async (dispatch, getState) => {
         con = new web3.eth.Contract(abi, addr, {address: addr})
         con.caller = accounts[0]
     }
-    
+
     let network = await web3.eth.net.getNetworkType();
     //re-establish the chain with new account
     dispatch(dFn({
@@ -59,7 +59,7 @@ const initChain = (ethProvider, dFn) => async (dispatch, getState) => {
         network
     }));
 }
-   
+
 
 const initTransactions = () => async (dispatch, getState) => {
     let ch = getState().chain;
@@ -79,7 +79,7 @@ const initTransactions = () => async (dispatch, getState) => {
             let b = await web3.eth.getBlock(i, true);
             for(let j=0;j<b.transactions.length;++j) {
                 let t = b.transactions[j];
-                
+
                 let r = await web3.eth.getTransactionReceipt(t.hash);
 
                 allTxns.push({
@@ -129,7 +129,7 @@ const startSubscriptions = () => async (dispatch,getState) => {
     }
 
     let web3 = chain.web3;
-    
+
     if(web3) {
         //clear out any previous subscriptions. This doesn't actually clear MetaMask
       //so not sure if it's really useful.
@@ -138,7 +138,7 @@ const startSubscriptions = () => async (dispatch,getState) => {
       //now subscribe to chain for all new blocks and push on demand
       let sub = web3.eth.subscribe('newBlockHeaders');
       let subCallback = async (block) => {
-        
+
         if(block) {
             console.log("incoming block", block.number);
           await dispatch(pullTxns(block))
@@ -156,7 +156,7 @@ const startSubscriptions = () => async (dispatch,getState) => {
 const pullTxns = block => async (dispatch, getState) => {
     let chain = getState().chain;
     let web3 = chain.web3;
-    
+
     let allTxns = [];
     if(web3) {
         let txns = block.transactions;
@@ -177,23 +177,45 @@ const pullTxns = block => async (dispatch, getState) => {
     }
 }
 
+const contractVisit = () => async (dispatch, getState) => {
+  let chain = getState().chain;
+  let web3 = chain.web3;
+  let sampleContractInstance = chain.contract;
+  const account = chain.account;
+  console.log({account});
+  if(web3 && sampleContractInstance) {
+    await sampleContractInstance.methods.visit().send({
+      from: account,
+      //gas: 600000,
+      //gasPrice: 100000000
+    });
+
+    // dispatch(Creators.chainChanged({
+    //     contract: sampleContractInstance
+    // }));
+
+  }
+}
+
+
+
 const pullEvents = block => async (dispatch, getState) => {
     let chain = getState().chain;
     let web3 = chain.web3;
     let con = chain.contract;
-    
+
     if(web3 && con) {
 
         let config = {
             //terribly inefficient to keep getting from zero but fine for demo
             fromBlock: 0 // block?block.number:0
         };
-    
+
         try {
         let evtName = "allEvents";
         let start = Date.now();
         let events = await con.getPastEvents(evtName, config);
-        
+
         if(events && events.length > 0) {
             for(let i=0;i<events.length;++i) {
                 let evt = events[i];
@@ -210,5 +232,6 @@ const pullEvents = block => async (dispatch, getState) => {
 
 export default {
     init,
-    startSubscriptions
+    startSubscriptions,
+    contractVisit
 }

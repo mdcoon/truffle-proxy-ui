@@ -15,7 +15,7 @@ const Interactions = props => {
           <Card body>
             <CardTitle>Visit</CardTitle>
             <CardText>Here’s a visit description here.</CardText>
-            <Button>Go somewhere</Button>
+            <Button onClick={props.contractVisit}>Go somewhere</Button>
           </Card>
         </Col>
         <Col sm="6">
