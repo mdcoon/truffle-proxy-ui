@@ -23,6 +23,7 @@ import {
 import classNames from "classnames";
 import * as align from "Constants/alignments";
 import Navi from "./Nav.jsx";
+import VersionsTable from "./VersionsTable.jsx";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -88,11 +89,12 @@ export default class Main extends React.Component {
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
-            <Row>
+            {/* <Row>
               <Col sm="12">
                 <h4>Tab 1 Contents</h4>
               </Col>
-            </Row>
+            </Row> */}
+            <VersionsTable />
           </TabPane>
           <TabPane tabId="2">
             <Row>

@@ -23,7 +23,7 @@ import {
 import classNames from "classnames";
 import * as align from "Constants/alignments";
 
-export default class Example extends React.Component {
+export default class Navi extends React.Component {
   constructor(props) {
     super(props);
 
