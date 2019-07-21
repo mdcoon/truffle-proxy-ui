@@ -1,6 +1,7 @@
 import {Creators} from './actions'
 import {Types as eventTypes} from 'Redux/logEvents/actions'
 import {registerDeps} from 'Redux/DepMiddleware'
+import _ from 'lodash'
 
 const init = () => async (dispatch) => {
     registerDeps([eventTypes.ADD_EVENTS], ()=>{
@@ -17,7 +18,7 @@ const convertEvents = (isUpdate) => (dispatch, getState) => {
     console.log("Converting events to versions");
     let evts = getState().logEvents;
 
-    let versions = [];
+    let versions = {};
     //need block #, new address, txn hash 
     evts.data.forEach(e=>{
         let v = {
@@ -26,12 +27,13 @@ const convertEvents = (isUpdate) => (dispatch, getState) => {
             txnHash: e.transactionHash,
             timestamp: e.timestamp
         }
-        versions.push(v)
+        versions[v.txnHash] = v;
     })
+
     if(!isUpdate) {
-        dispatch(Creators.initSuccess(versions))
+        dispatch(Creators.initSuccess(_.keys(versions).map(k=>versions[k])))
     } else {
-        dispatch(Creators.setData(versions))
+        dispatch(Creators.setData(_.keys(versions).map(k=>versions[k])))
     }
     
 }

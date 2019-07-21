@@ -156,9 +156,14 @@ const startSubscriptions = () => async (dispatch,getState) => {
 const pullTxns = block => async (dispatch, getState) => {
     let chain = getState().chain;
     let web3 = chain.web3;
-    let txns = block.transactions;
+    
     let allTxns = [];
     if(web3) {
+        let txns = block.transactions;
+        if(!txns) {
+            block = await web3.eth.getBlock(block.number, true);
+            txns = block.transactions;
+        }
         for(let i=0;i<txns.length;++i) {
             let t = txns[i];
             let r = await web3.eth.getTransactionReceipt(t.hash);
