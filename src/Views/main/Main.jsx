@@ -25,8 +25,8 @@ import * as align from "Constants/alignments";
 import Navi from "./Nav.jsx";
 import VersionsTable from "./versions";
 import HistoricalData from "./txns";
-import Interactions from "./Interactions.jsx";
-import Settings from "./Settings.jsx";
+import Interactions from "./interactions";
+import Settings from "./settings";
 
 export default class Main extends React.Component {
   constructor(props) {

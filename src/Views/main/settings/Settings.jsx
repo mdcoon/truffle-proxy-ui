@@ -13,6 +13,10 @@ import * as align from "Constants/alignments";
 
 export default class Settings extends React.Component {
   render() {
+    const {
+      proxyAddress
+    } = this.props;
+
     return (
       <div className={classNames(["container"], ["text-center"], ["mt-5"])}>
         <Form>
@@ -21,7 +25,7 @@ export default class Settings extends React.Component {
               Please enter your contract address:
             </Label>
             <Col sm={5}>
-              <Input type="textarea" name="text" id="contractAddress" />
+              <Input type="textarea" name="text" id="contractAddress" value={proxyAddress} onChange={e=>this.props.updateAddress(e.target.value)}/>
             </Col>
           </FormGroup>
           <FormGroup check row>

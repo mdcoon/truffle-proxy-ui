@@ -15,14 +15,14 @@ const Interactions = props => {
           <Card body>
             <CardTitle>Visit</CardTitle>
             <CardText>Here’s a visit description here.</CardText>
-            <Button>Go somewhere</Button>
+            <Button onClick={props.contractVisit}>Go somewhere</Button>
           </Card>
         </Col>
         <Col sm="6">
           <Card body>
             <CardTitle>Increment</CardTitle>
             <CardText>Here’s an increment description here</CardText>
-            <Button>Increment</Button>
+            <Button onClick={props.contractIncrement}>Increment</Button>
           </Card>
         </Col>
       </Row>

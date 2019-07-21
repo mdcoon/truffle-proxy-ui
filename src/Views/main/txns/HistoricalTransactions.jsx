@@ -17,6 +17,7 @@ export default class HistoricalStorage extends React.Component {
             <th>Function</th>
             <th>To Addr</th>
             <th>Transaction Hash</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -24,9 +25,10 @@ export default class HistoricalStorage extends React.Component {
             txns.map((t, i)=>(
               <tr key={i}>
                 <th scope="row">{t.blockNumber.toLocaleString()}</th>
-                <td>f...</td>
+                <td>{t.fn?t.fn:'unknown'}</td>
                 <td>{t.receipt.to?t.receipt.to:'none'}</td>
                 <td>{t.hash.substring(0, 20) + '...'}</td>
+                <td>{t.receipt.status?"SUCCESS":"FAIL"}</td>
               </tr>
             ))
           }

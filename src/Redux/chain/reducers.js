@@ -65,6 +65,13 @@ const addTxns = (state=INIT, action) => {
         ...state.txns,
         ...action.txns
     ]
+    txns.sort((a,b)=>{
+        let c = b.blockNumber - a.blockNumber;
+        if(c !== 0) {
+            return c;
+        }
+        return b.transactionIndex - a.transactionIndex
+    })
     return {
         ...state,
         txns: txns
