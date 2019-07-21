@@ -17,7 +17,6 @@ export default class VersionsTable extends React.Component {
             <th>Deploy Date</th>
             <th>Address</th>
             <th>Transaction Hash</th>
-            <th />
           </tr>
         </thead>
         <tbody>
@@ -28,15 +27,10 @@ export default class VersionsTable extends React.Component {
                 <td>{formatTime(v.timestamp, 'MM-DD-YYYY HH:mm:ss')}</td>
                 <td>{v.address}</td>
                 <td>{v.txnHash}</td>
-                <td className={classNames(["text-center"])}>
-                  <Button color="primary" size="lg" onClick={()=>this.props.showTxns(v)}>
-                    Here's a link
-                  </Button>
-                </td>
               </tr>
             ))
           }
-         
+
         </tbody>
       </Table>
     );

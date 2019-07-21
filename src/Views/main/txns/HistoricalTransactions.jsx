@@ -31,7 +31,7 @@ export default class HistoricalStorage extends React.Component {
                 <td>{t.receipt.to?t.receipt.to:'none'}</td>
                 <td>{t.hash.substring(0, 20) + '...'}</td>
                 <td>{t.receipt.status?"SUCCESS":"FAIL"}</td>
-                <td><StorageSummary /></td>
+                <td><StorageSummary transaction={t} /></td>
               </tr>
             ))
           }

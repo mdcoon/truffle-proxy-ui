@@ -10,12 +10,10 @@ export default class HistoricalData extends React.Component {
     return (
       <div>
         <div className={classNames(["row"])}>
-          <div className={classNames(["col-6"])}>
+          <div className={classNames(["col-12"])}>
             <HistoricalTransactions {...this.props} />
           </div>
-          <div className={classNames(["col-6"])}>
-            <HistoricalStorage {...this.props} />
-          </div>
+
         </div>
       </div>
     );
