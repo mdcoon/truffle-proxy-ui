@@ -42,7 +42,7 @@ See Versions of Proxies - and get an **explanation**
 
 Compare the output storage size of your proxy contracts - and check out **how that reference storage location stays the same**
 
-![Interactions](https://github.com/mdcoon/truffle-proxy-ui/img/blob/master/Interactions.png "Interactions")
+![Interactions](https://github.com/mdcoon/truffle-proxy-ui/blob/master/img/Interactions.png "Interactions")
 
 Interact with everyone's favorite - **Metamask**
 
