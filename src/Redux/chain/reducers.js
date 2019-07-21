@@ -10,7 +10,8 @@ const INIT = {
     contract: null,
     network: 0,
     subscriptions: null,
-    txns: []
+    txns: [],
+    abiParser: null
 }
 
 const start = (state=INIT) => {
@@ -29,7 +30,8 @@ const done = (state=INIT, action) => {
         web3: action.props.web3,
         contract: action.props.contract,
         account: action.props.account,
-        network: action.props.network
+        network: action.props.network,
+        abiParser: action.props.abiParser
     }
 }
 

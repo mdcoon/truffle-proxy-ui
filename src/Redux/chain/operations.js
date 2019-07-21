@@ -5,11 +5,12 @@ import {Creators} from './actions'
 import {default as Settings} from 'Constants/settings'
 import Web3 from 'web3';
 import abi from './abi'
+import Parser from './ABIParser';
 
 const init = () => async (dispatch, getState) => { 
     dispatch(Creators.initStart())
     registerDeps([settingTypes.UPDATE], ()=>{
-        dispatch(resetContract)
+        dispatch(resetContract())
     })
     await dispatch(loadWeb3())
 }
@@ -34,6 +35,7 @@ const loadWeb3 = () => async (dispatch) => {
         });
 
         await dispatch(initChain(ethProvider, Creators.initSuccess))
+        
         await dispatch(initTransactions())
     } else {
         dispatch(Creators.failure(new Error("Missing ethProvider in environment")))
@@ -51,19 +53,28 @@ const initChain = (ethProvider, dFn) => async (dispatch, getState) => {
     }
     
     let network = await web3.eth.net.getNetworkType();
+    let parser = await dispatch(initParser(web3))
     //re-establish the chain with new account
     dispatch(dFn({
         web3,
         account: accounts[0],
         contract: con,
-        network
+        network,
+        abiParser: parser
     }));
+}
+
+const initParser = (web3) => async (dispatch, getState) => {
+    let p = new Parser({abi});
+    await dispatch(p.init(web3))
+    return p;
 }
    
 
 const initTransactions = () => async (dispatch, getState) => {
     let ch = getState().chain;
     let web3 = ch.web3;
+    let parser = ch.abiParser;
     if(web3) {
         let start = await web3.eth.getBlockNumber();
         let end = start;
@@ -79,6 +90,7 @@ const initTransactions = () => async (dispatch, getState) => {
             let b = await web3.eth.getBlock(i, true);
             for(let j=0;j<b.transactions.length;++j) {
                 let t = b.transactions[j];
+                parser.process(t);
                 
                 let r = await web3.eth.getTransactionReceipt(t.hash);
 
