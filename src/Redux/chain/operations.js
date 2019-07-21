@@ -74,6 +74,7 @@ const initParser = (web3) => async (dispatch, getState) => {
 const initTransactions = () => async (dispatch, getState) => {
     let ch = getState().chain;
     let web3 = ch.web3;
+
     let parser = ch.abiParser;
     if(web3) {
         let start = await web3.eth.getBlockNumber();
@@ -88,15 +89,25 @@ const initTransactions = () => async (dispatch, getState) => {
         let allTxns = [];
         for(let i=start;i<=end;++i) {
             let b = await web3.eth.getBlock(i, true);
+            let addr = ch.contract.address;
+            let calls = [
+                web3.eth.getStorageAt(addr, 2, b.number),
+                web3.eth.getStorageAt(addr, 1, b.number)
+            ]
+            let [st, cntSt] = await Promise.all(calls);
+            st = web3.utils.hexToNumberString(st)-0;
+            cntSt = web3.utils.hexToNumberString(cntSt)-0;
             for(let j=0;j<b.transactions.length;++j) {
                 let t = b.transactions[j];
 
                 parser.process(t);
                 
                 let r = await web3.eth.getTransactionReceipt(t.hash);
+                
 
                 allTxns.push({
                     ...t,
+                    storage: [st, cntSt],
                     receipt: r,
                     timestamp: b.timestamp
                 })
@@ -170,8 +181,17 @@ const pullTxns = block => async (dispatch, getState) => {
     let chain = getState().chain;
     let web3 = chain.web3;
     let parser = chain.abiParser;
+    
     let allTxns = [];
     if(web3) {
+        let addr = chain.contract.address;
+        let calls = [
+            web3.eth.getStorageAt(addr, 2, block.number),
+            web3.eth.getStorageAt(addr, 1, block.number)
+        ]
+        let [st, cntSt] = await Promise.all(calls);
+        st = web3.utils.hexToNumberString(st)-0;
+        cntSt = web3.utils.hexToNumberString(cntSt)-0;
         let txns = block.transactions;
         if(!txns) {
             block = await web3.eth.getBlock(block.number, true);
@@ -183,6 +203,7 @@ const pullTxns = block => async (dispatch, getState) => {
             let r = await web3.eth.getTransactionReceipt(t.hash);
             allTxns.push({
                 ...t,
+                stoage: [st, cntSt],
                 timestamp: block.timestamp,
                 receipt: r
             })
