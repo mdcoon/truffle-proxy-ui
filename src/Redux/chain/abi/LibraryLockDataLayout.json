@@ -1,0 +1,207 @@
+{
+  "contractName": "LibraryLockDataLayout",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "initialized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"initialized\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol\":\"LibraryLockDataLayout\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol\":{\"keccak256\":\"0x1d24e096be99d9f3d2d5920d630492e0853fb9cdd12dfbe1a69b3fe6e9bfb693\",\"urls\":[\"bzzr://090b3697ab4d9db5555f9e9e302e95b4285f1e74e3bfaea0c00b14d964680d4b\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008060006101000a81548160ff021916908315150217905550348015602957600080fd5b50608b806100386000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063158ef93e14602d575b600080fd5b6033604d565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff168156fea165627a7a723058207b731495a9d954e6edb8ff991a3d726aa9181ce2ffecb0a74f7ab5198daf38000029",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063158ef93e14602d575b600080fd5b6033604d565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff168156fea165627a7a723058207b731495a9d954e6edb8ff991a3d726aa9181ce2ffecb0a74f7ab5198daf38000029",
+  "sourceMap": "25:69:1:-;;;86:5;60:31;;;;;;;;;;;;;;;;;;;;25:69;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:69:1;;;;;;;",
+  "deployedSourceMap": "25:69:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:69:1;;;;;;;;;;;;;;;;;;;60:31;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.1;\n\ncontract LibraryLockDataLayout {\n  bool public initialized = false;\n}",
+  "sourcePath": "/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol",
+  "ast": {
+    "absolutePath": "/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol",
+    "exportedSymbols": {
+      "LibraryLockDataLayout": [
+        30
+      ]
+    },
+    "id": 31,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 26,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 30,
+        "linearizedBaseContracts": [
+          30
+        ],
+        "name": "LibraryLockDataLayout",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 29,
+            "name": "initialized",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "60:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 27,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "60:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 28,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "86:5:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 31,
+        "src": "25:69:1"
+      }
+    ],
+    "src": "0:94:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol",
+    "exportedSymbols": {
+      "LibraryLockDataLayout": [
+        30
+      ]
+    },
+    "id": 31,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 26,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 30,
+        "linearizedBaseContracts": [
+          30
+        ],
+        "name": "LibraryLockDataLayout",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 29,
+            "name": "initialized",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "60:31:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 27,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "60:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "66616c7365",
+              "id": 28,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "86:5:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 31,
+        "src": "25:69:1"
+      }
+    ],
+    "src": "0:94:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-07-20T18:58:41.968Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -2,11 +2,11 @@ import {createActions} from 'reduxsauce'
 
 const {Types, Creators} = createActions({
     initStart: null,
-    initSuccess: ['props'],
-    chainChanged: ['props'],
-    addEvents: ['events'],
+    initSuccess: ['data'],
+    setData: ['data'],
     failure: ['error']
-}, {prefix: "chain."});
+}, {prefix: "versions."})
 export {
-    Types, Creators
+    Types,
+    Creators
 }

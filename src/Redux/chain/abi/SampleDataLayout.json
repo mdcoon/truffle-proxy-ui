@@ -1,0 +1,526 @@
+{
+  "contractName": "SampleDataLayout",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "count",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "initialized",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "guestBook",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "maxGuests",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "newAddress",
+          "type": "address"
+        }
+      ],
+      "name": "NewContractAddress",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"count\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"initialized\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"guestBook\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"maxGuests\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"newAddress\",\"type\":\"address\"}],\"name\":\"NewContractAddress\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/mdcoon/SampleProxy/contracts/SampleDataLayout.sol\":\"SampleDataLayout\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol\":{\"keccak256\":\"0x1d24e096be99d9f3d2d5920d630492e0853fb9cdd12dfbe1a69b3fe6e9bfb693\",\"urls\":[\"bzzr://090b3697ab4d9db5555f9e9e302e95b4285f1e74e3bfaea0c00b14d964680d4b\"]},\"/Users/mdcoon/SampleProxy/contracts/SampleDataLayout.sol\":{\"keccak256\":\"0x75cd28d7d89a02abee31795034ff6d731877e771efcf28f1d25b361904d587cb\",\"urls\":[\"bzzr://c006fd41b49ad52b1643f9b22be0e87fbe83ce17773438d6efe53a4e6b659c0a\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008060006101000a81548160ff02191690831515021790555034801561002a57600080fd5b506101758061003a6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806306661abd14610051578063158ef93e1461006f5780633fd0445214610091578063aae37221146100ed575b600080fd5b61005961010b565b6040518082815260200191505060405180910390f35b610077610111565b604051808215151515815260200191505060405180910390f35b6100d3600480360360208110156100a757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610123565b604051808215151515815260200191505060405180910390f35b6100f5610143565b6040518082815260200191505060405180910390f35b60015481565b6000809054906101000a900460ff1681565b60036020528060005260406000206000915054906101000a900460ff1681565b6002548156fea165627a7a7230582049937b82112a74b4f1c728015dcfc4a3dbb614e1057b2650db7713b7fdc935330029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806306661abd14610051578063158ef93e1461006f5780633fd0445214610091578063aae37221146100ed575b600080fd5b61005961010b565b6040518082815260200191505060405180910390f35b610077610111565b604051808215151515815260200191505060405180910390f35b6100d3600480360360208110156100a757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610123565b604051808215151515815260200191505060405180910390f35b6100f5610143565b6040518082815260200191505060405180910390f35b60015481565b6000809054906101000a900460ff1681565b60036020528060005260406000206000915054906101000a900460ff1681565b6002548156fea165627a7a7230582049937b82112a74b4f1c728015dcfc4a3dbb614e1057b2650db7713b7fdc935330029",
+  "sourceMap": "64:210:7:-;;;86:5:1;60:31;;;;;;;;;;;;;;;;;;;;64:210:7;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:210:7;;;;;;;",
+  "deployedSourceMap": "64:210:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:210:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;182:17;;;:::i;:::-;;;;;;;;;;;;;;;;;;;60:31:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;232:39:7;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;232:39:7;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;205:21;;;:::i;:::-;;;;;;;;;;;;;;;;;;;182:17;;;;:::o;60:31:1:-;;;;;;;;;;;;;:::o;232:39:7:-;;;;;;;;;;;;;;;;;;;;;;:::o;205:21::-;;;;:::o",
+  "source": "pragma solidity ^0.5.1;\n\nimport './LibraryLockDataLayout.sol';\n\ncontract SampleDataLayout is LibraryLockDataLayout {\n\n    event NewContractAddress(address newAddress);\n    \n    \n    uint public count;\n    uint public maxGuests;\n    mapping(address=>bool) public guestBook;\n}",
+  "sourcePath": "/Users/mdcoon/SampleProxy/contracts/SampleDataLayout.sol",
+  "ast": {
+    "absolutePath": "/Users/mdcoon/SampleProxy/contracts/SampleDataLayout.sol",
+    "exportedSymbols": {
+      "SampleDataLayout": [
+        290
+      ]
+    },
+    "id": 291,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 274,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol",
+        "file": "./LibraryLockDataLayout.sol",
+        "id": 275,
+        "nodeType": "ImportDirective",
+        "scope": 291,
+        "sourceUnit": 31,
+        "src": "25:37:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 276,
+              "name": "LibraryLockDataLayout",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 30,
+              "src": "93:21:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibraryLockDataLayout_$30",
+                "typeString": "contract LibraryLockDataLayout"
+              }
+            },
+            "id": 277,
+            "nodeType": "InheritanceSpecifier",
+            "src": "93:21:7"
+          }
+        ],
+        "contractDependencies": [
+          30
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 290,
+        "linearizedBaseContracts": [
+          290,
+          30
+        ],
+        "name": "SampleDataLayout",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 281,
+            "name": "NewContractAddress",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 280,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 279,
+                  "indexed": false,
+                  "name": "newAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 281,
+                  "src": "147:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 278,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:20:7"
+            },
+            "src": "122:45:7"
+          },
+          {
+            "constant": false,
+            "id": 283,
+            "name": "count",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "182:17:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 282,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "182:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 285,
+            "name": "maxGuests",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "205:21:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 284,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "205:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 289,
+            "name": "guestBook",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "232:39:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 288,
+              "keyType": {
+                "id": 286,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "240:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "232:22:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 287,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "249:4:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 291,
+        "src": "64:210:7"
+      }
+    ],
+    "src": "0:274:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mdcoon/SampleProxy/contracts/SampleDataLayout.sol",
+    "exportedSymbols": {
+      "SampleDataLayout": [
+        290
+      ]
+    },
+    "id": 291,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 274,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "absolutePath": "/Users/mdcoon/SampleProxy/contracts/LibraryLockDataLayout.sol",
+        "file": "./LibraryLockDataLayout.sol",
+        "id": 275,
+        "nodeType": "ImportDirective",
+        "scope": 291,
+        "sourceUnit": 31,
+        "src": "25:37:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 276,
+              "name": "LibraryLockDataLayout",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 30,
+              "src": "93:21:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_LibraryLockDataLayout_$30",
+                "typeString": "contract LibraryLockDataLayout"
+              }
+            },
+            "id": 277,
+            "nodeType": "InheritanceSpecifier",
+            "src": "93:21:7"
+          }
+        ],
+        "contractDependencies": [
+          30
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 290,
+        "linearizedBaseContracts": [
+          290,
+          30
+        ],
+        "name": "SampleDataLayout",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 281,
+            "name": "NewContractAddress",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 280,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 279,
+                  "indexed": false,
+                  "name": "newAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 281,
+                  "src": "147:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 278,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:20:7"
+            },
+            "src": "122:45:7"
+          },
+          {
+            "constant": false,
+            "id": 283,
+            "name": "count",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "182:17:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 282,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "182:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 285,
+            "name": "maxGuests",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "205:21:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 284,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "205:4:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 289,
+            "name": "guestBook",
+            "nodeType": "VariableDeclaration",
+            "scope": 290,
+            "src": "232:39:7",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+              "typeString": "mapping(address => bool)"
+            },
+            "typeName": {
+              "id": 288,
+              "keyType": {
+                "id": 286,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "240:7:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "232:22:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
+                "typeString": "mapping(address => bool)"
+              },
+              "valueType": {
+                "id": 287,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "249:4:7",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 291,
+        "src": "64:210:7"
+      }
+    ],
+    "src": "0:274:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-07-21T04:56:26.004Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
