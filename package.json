@@ -41,7 +41,7 @@
     "localforage": "^1.7.3",
     "localforage-setitems": "^1.4.0",
     "moment": "^2.24.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "randomcolor": "^0.5.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
